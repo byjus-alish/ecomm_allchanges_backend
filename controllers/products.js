@@ -8,7 +8,6 @@ const getAllProducts = asyncWrapper(async(req,res) =>{
 
 const createProduct = asyncWrapper(async(req,res) =>{
     const product = await Product.create(req.body);
-    console.log(req.cookies);
     res.status(201).json({product});
 })
 
@@ -22,6 +21,7 @@ const getProduct = asyncWrapper(async(req,res)=>{
 })
 
 const updateProduct = asyncWrapper(async(req,res,next)=>{
+    console.log(req.body)
     const {id: productID} = req.params
     const product = await Product.findOneAndUpdate({ _id: productID}, req.body, {
         new: true, 

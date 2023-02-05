@@ -14,7 +14,6 @@ const {
 } = require('../controllers/products')
 
 
-//router.route('/').get(getAllProducts).post(verifyJWT,verifyRoles(ROLES_LIST.Admin),createProduct)
 router.route('/').get(verifyJWT,getAllProducts).post(verifyJWT,verifyRoles(ROLES_LIST.Admin),createProduct)
 router.route('/myP').get(getProductByName)
 router.route('/:id').get(getProduct).patch(verifyJWT,verifyRoles(ROLES_LIST.Admin),updateProduct).delete(verifyJWT,verifyRoles(ROLES_LIST.Admin),deleteProduct);

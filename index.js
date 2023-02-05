@@ -22,7 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 
 app.use('/user',user)
 app.use('/products', products); 
-app.use('/', login);
+app.use('/login', login);
 app.use('/',logout)
 app.use('/orders',orders);
 app.use('/refresh', require('./routes/refresh'));

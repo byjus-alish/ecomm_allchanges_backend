@@ -28,9 +28,11 @@ const registerUser = asyncWrapper(async(req,res) =>{
     const user = req.body;
 
     console.log(user)
+
     if(!user.email || !user.password || !user.first_name || !user.last_name){
         return res.status(400).json({ 'message': 'Any of the one requried credeitials are not mentioned' });
     }
+
     let hashedPassword = await hashPassword(user.password);
     user.password =  hashedPassword;
     if(user.email === "admin@byjus.com") user.roles =  {User: 1, Admin: 2};
