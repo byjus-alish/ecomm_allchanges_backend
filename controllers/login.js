@@ -48,11 +48,11 @@ const loginUser = asyncWrapper(async(req,res)=>{
 })
 
 const loginThroughOAuth = asyncWrapper(async(req,res)=>{
-    const { first_name,email } = req.body;
+    const { first_name, email } = req.body;
     console.log(req.body)
     let user = await User.findOne({email: req.body.email});
     if(!user){
-      user = await User.create({user,email}); 
+      user = await User.create({first_name,email}); 
     }
     const roles =  Object.values(user.roles).filter(Boolean);;
     const accessToken = jwt.sign(
