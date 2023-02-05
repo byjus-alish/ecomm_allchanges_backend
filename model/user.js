@@ -32,7 +32,7 @@ const UserSchema = new mongoose.Schema({
     roles: {
         User: {
             type: Number,
-            default: 0
+            default: 1
         },
         Admin: Number
     },      

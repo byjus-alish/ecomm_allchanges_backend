@@ -22,19 +22,19 @@ const items=new mongoose.Schema({
   name:{
     type:String,
   },
+  id:{
+    type:String,
+  },
   price:{
     type:Number
   },
-  quantity:{
-    type:Number
+  image:{
+    type:String
   }
 })
 const orders = new mongoose.Schema({
     cart: {
-      type: [items]
-    },
-    total: {
-      type: Number
+      type: items
     },
     address:{
       type: shipping,
@@ -42,6 +42,9 @@ const orders = new mongoose.Schema({
     doo:{
       type: Date,
       default: Date.now
+    },
+    referenceId:{
+      type: String
     },
     userID: {
       type: String

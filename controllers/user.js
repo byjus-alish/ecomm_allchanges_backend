@@ -33,7 +33,7 @@ const registerUser = asyncWrapper(async(req,res) =>{
     }
     let hashedPassword = await hashPassword(user.password);
     user.password =  hashedPassword;
-    if(user.email === "admin@byjus.com") user.roles =  {User: 0, Admin: 1};
+    if(user.email === "admin@byjus.com") user.roles =  {User: 1, Admin: 2};
     await User.create(user); 
     res.status(201).json({user});
 })
