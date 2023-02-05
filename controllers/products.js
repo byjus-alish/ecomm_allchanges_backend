@@ -44,7 +44,7 @@ const deleteProduct =  asyncWrapper(async(req,res,next)=>{
 
 const getProductByName = asyncWrapper(async(req,res)=>{
     const pid=req.query.pid;
-    const product = await Product.find({id:pid});
+    const product = await Product.find({_id:pid});
     res.status(200).json({ product });
 })
 
