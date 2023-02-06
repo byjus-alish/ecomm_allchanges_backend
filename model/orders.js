@@ -49,6 +49,9 @@ const orders = new mongoose.Schema({
     userID: {
       type: String
     },
+    phone: {
+      type: String
+    },
     orderStatus:{
       type:String
     },
