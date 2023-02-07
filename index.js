@@ -5,6 +5,7 @@ const user      = require('./routes/user')
 const login     = require('./routes/login') 
 const logout    = require('./routes/logout')
 const orders     = require('./routes/orders') 
+const customerdetails     = require('./routes/customerdetails') 
 const notFound  = require('./middleware/notFound');
 const connectDB = require('./db/connect')
 const cors      = require('cors')
@@ -25,6 +26,7 @@ app.use('/products', products);
 app.use('/login', login);
 app.use('/',logout)
 app.use('/orders',orders);
+app.use('/customerdetails',customerdetails);
 app.use('/refresh', require('./routes/refresh'));
 app.use(notFound)
 
